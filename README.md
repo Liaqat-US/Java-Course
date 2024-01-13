@@ -1,1 +1,1 @@
-# This is my first programme.
+# This is my first Java programme.
