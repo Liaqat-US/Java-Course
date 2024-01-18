@@ -3,8 +3,6 @@ package DSA;
 /**
  * BubbleSort: in which we find greatest value and swap it.
  */
-
-
 public class BubbleSort {
 
     //print Bubble Sorted Array
