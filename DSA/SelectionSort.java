@@ -1,9 +1,9 @@
 package DSA;
-
 /**
- * BubbleSort: in which we find greatest value and swap it.
+ * SelectionSort: in which we find smallest value and swap it.
  */
-public class BubbleSort {
+
+public class SelectionSort {
 
     //print Sorted Array
     public static void Display(int arr[]){
@@ -16,15 +16,18 @@ public class BubbleSort {
         int arr[] = {1,9,4,2,8,3,7,5,6};
 
         for(int i=0; i<arr.length - 1; i++){
-            for(int j=0; j<arr.length - i - 1; j++){
-                if(arr[j] < arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+            int smallest = i;
+            for(int j=i + 1; j<arr.length; j++){
+                if(arr[smallest] > arr[j]){
+                    smallest = j;
                 }
             }
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
         }
 
         Display(arr);
     }
+    
 }
