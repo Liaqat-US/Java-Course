@@ -10,7 +10,6 @@ public class WordCount {
         if(word.length() == idx){
             System.out.println("First: "+First);
             System.out.println("Last: "+Last);
-            System.out.println(idx);
             return;
         }
 
