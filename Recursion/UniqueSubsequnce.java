@@ -26,7 +26,7 @@ public class UniqueSubsequnce {
     }
 
     public static void main(String[] args) {
-        String str = "aaa";
+        String str = "ab";
 
         HashSet<String> set = new HashSet<>();
 
