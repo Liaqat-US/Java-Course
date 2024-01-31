@@ -46,6 +46,40 @@ public class LinkedList {
         currNode.next = newNode;
     }
 
+    //reverseIterative linked list
+    public void reverseIterative() {
+        if(Head == null || Head.next == null){
+            return;
+        }
+
+        Node prevNode = Head;
+        Node currNode = Head.next;
+
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+
+        Head.next =  null;
+        Head = prevNode;
+    }
+
+    //reverseRecursive
+    public Node reverseRecursive(Node Head) {
+        if(Head == null || Head.next == null){
+            return Head;
+        }
+
+        Node newHead = reverseRecursive(Head.next);
+        Head.next.next = Head;
+        Head.next = null;
+
+        return newHead;
+    }
+
     //print list
     public void printList(){
         if (Head == null) {
@@ -98,7 +132,7 @@ public class LinkedList {
         secondLast.next = null;
     }
 
-
+    //size of list
     public int getSize(){
         return size;
     }
@@ -109,17 +143,21 @@ public class LinkedList {
         ll.insertFirst("a");
         ll.insertFirst("is");
         ll.insertFirst("it");
-        ll.printList();
+        // ll.printList();
 
         ll.insertEnd("list");
         ll.printList();
 
-        ll.deleteFirst();
         // ll.deleteFirst();
-        ll.printList();
+        // ll.deleteFirst();
+        // ll.printList();
 
-        ll.deleteLast();
         // ll.deleteLast();
+        // ll.deleteLast();
+        // ll.printList();
+
+        // ll.reverseIterative();
+        ll.Head = ll.reverseRecursive(ll.Head);
         ll.printList();
 
         System.out.println(ll.getSize());
