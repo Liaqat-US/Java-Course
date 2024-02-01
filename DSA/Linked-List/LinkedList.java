@@ -137,6 +137,33 @@ public class LinkedList {
         return size;
     }
 
+    public void deleteFromEnd(int n) {
+        if (Head == null) {
+            return;
+        }
+
+        if (n == size) {
+            Head = Head.next;
+            return;
+        }
+
+        // size
+        Node curr = Head;
+        while (curr != null) {
+            curr = curr.next;
+        }
+
+        int moveToIndex = size - n;
+        Node prevNode = Head;
+        int i = 1;
+        while (i < moveToIndex) {
+            prevNode = prevNode.next;
+            i++;
+        }
+
+        prevNode.next = prevNode.next.next;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
@@ -157,7 +184,10 @@ public class LinkedList {
         // ll.printList();
 
         // ll.reverseIterative();
-        ll.Head = ll.reverseRecursive(ll.Head);
+        // ll.Head = ll.reverseRecursive(ll.Head);
+        // ll.printList();
+
+        ll.deleteFromEnd(4);
         ll.printList();
 
         System.out.println(ll.getSize());
